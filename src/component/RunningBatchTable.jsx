@@ -248,7 +248,7 @@ function RunningBatchTable() {
                         <td>{new Date(batch.endDate).toLocaleString()}</td>
                         <td>
                           <button className="btn btn-primary me-2" onClick={() => handleEdit(batch.id.batchId, batch.id.trainerId, batch.id.subjectId)}>Update</button>
-                          <button className="btn btn-danger" onClick={() => handleDelete(batch.id.batchId, batch.id.trainerId, batch.id.subjectId)}>Delete</button>
+                          {/* <button className="btn btn-danger" onClick={() => handleDelete(batch.id.batchId, batch.id.trainerId, batch.id.subjectId)}>Delete</button> */}
                         </td>
                       </>
                     )}
