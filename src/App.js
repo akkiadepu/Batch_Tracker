@@ -16,7 +16,7 @@ function App() {
   
   
         {/* <Header/>   */}
-      <Routes>
+      <Routes basename="/tothepoint_login">
         <Route path="/" element={<Home/>}/>
         <Route path="/page2" element={<Page2/>}/>
         <Route path="/TrainerForm" element={<TrainerForm/>}/>
