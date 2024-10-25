@@ -10,7 +10,7 @@ import Header from './Header';
 function BatchForm() {
   const [batchData, setBatchData] = useState({
     name: '',
-    startDate: '',
+    batchStartDate: '',
     locationId: ''
   });
 
@@ -47,7 +47,7 @@ function BatchForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (batchData.name === '' || batchData.startDate === '' || batchData.locationId === '') {
+    if (batchData.name === '' || batchData.batchStartDate === '' || batchData.locationId === '') {
       alert("Please fill in all fields.");
       return;
     }
@@ -55,7 +55,7 @@ function BatchForm() {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/batches`, {
         name: batchData.name,
-        startDate: batchData.startDate,
+        startDate: batchData.batchStartDate, 
         location: {
           id: batchData.locationId 
         }
@@ -64,7 +64,7 @@ function BatchForm() {
 
       if (response.status === 200 || response.status === 201) {
         console.log('Batch added successfully');
-        setBatchData({ name: '', startDate: '', locationId: '' });
+        setBatchData({ name: '', batchStartDate: '', locationId: '' });
       } else {
         console.error('Failed to add batch');
       }
@@ -160,8 +160,8 @@ function BatchForm() {
             <input
               type="date"
               className="input form-control"
-              id="startDate1"
-              value={batchData.startDate}
+              id="batchStartDate"
+              value={batchData.batchStartDate} 
               onChange={handleChange}
               style={{
                 backgroundColor: "#303245",

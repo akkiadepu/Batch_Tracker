@@ -18,7 +18,7 @@
   }
 }
 @media (max-width:900px){
-  #name,#startDate1,#location,#phone{
+  #name,#batchStartDate,#location,#phone{
     width:90%;
   }
 }
